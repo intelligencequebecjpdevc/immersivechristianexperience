@@ -1,0 +1,23 @@
+
+GraphQL API v4
+Reference Guides Explorer Changelog
+Introduction to GraphQL
+GraphQL terminology
+Discovering the GraphQL API
+GraphQL terminology
+The GitHub GraphQL API v4 represents an architectural and conceptual shift from the GitHub REST API v3. You will likely encounter some new terminology in the GraphQL API v4 reference docs.
+
+Schema
+A schema defines a GraphQL API's type system. It describes the complete set of possible data (objects, fields, relationships, everything) that a client can access. Calls from the client are validated and executed against the schema. A client can find information about the schema via introspection. A schema resides on the GraphQL API server. For more information, see "Discovering the GraphQL API."
+
+Field
+A field is a unit of data you can retrieve from an object. As the official GraphQL docs say: "The GraphQL query language is basically about selecting fields on objects."
+
+The official spec also says about fields:
+
+All GraphQL operations must specify their selections down to fields which return scalar values to ensure an unambiguously shaped response.
+
+This means that if you try to return a field that is not a scalar, schema validation will throw an error. You must add nested subfields until all fields return scalars.
+
+Argument
+An argument is a set of key-value pairs attached to a specific field. Some fields require an argument. Mutations require an input object as an argument.
